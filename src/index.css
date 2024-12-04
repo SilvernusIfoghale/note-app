@@ -50,15 +50,17 @@ textarea:focus {
 }
 
 .save {
-  background-color: #e1e1e1;
+  background-color: transparent;
   border: none;
   border-radius: 10px;
   padding: 8px 20px;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 .save:hover {
-  background-color: #ededed;
+  cursor: pointer;
+  transform: scale(110%);
 }
 
 .note {
@@ -66,7 +68,7 @@ textarea:focus {
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 1rem;
-  min-height: 170px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -90,17 +92,26 @@ textarea:focus {
   display: flex;
   align-items: center;
   background-color: rgb(236, 236, 236);
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 25px;
+  padding: 0 20px;
+  gap: 10px;
   margin-bottom: 1.5em;
 }
 
 .search input {
   border: none;
+  padding: 15px 0;
   flex: 1;
   background-color: rgb(236, 236, 236);
 }
 
 .search input:focus {
   outline: none;
+}
+.search-icons {
+  transition: 0.5s ease-in-out;
+}
+.search-icons:hover {
+  cursor: pointer;
+  transform: scale(110%);
 }

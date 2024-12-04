@@ -43,7 +43,7 @@ function App() {
   return (
     <div className={`${darkMode && "dark-mode"}`}>
       <div className="container">
-        <Header handleToggleDarkMode={setDarkMode} />
+        <Header handleToggleDarkMode={setDarkMode} darkMode={darkMode} />
         <Search handleSearchNote={setSearchText} />
         <NoteList
           notes={notes.filter((note) =>
