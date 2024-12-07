@@ -5,9 +5,19 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 
 function App() {
-  const [notes, setNotes] = useState(
-    JSON.parse(localStorage.getItem("saved-notes") || [])
-  );
+  // const [notes, setNotes] = useState(
+  //   JSON.parse(localStorage.getItem("saved-notes") || [])
+  // );
+
+  const [notes, setNotes] = useState(() => {
+    try {
+      const savedNotes = localStorage.getItem("saved-notes");
+      return savedNotes ? JSON.parse(savedNotes) : [];
+    } catch (error) {
+      console.error("Error parsing saved notes:", error);
+      return [];
+    }
+  });
 
   const addNote = (text) => {
     const date = new Date();
