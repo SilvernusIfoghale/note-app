@@ -15,11 +15,7 @@ function App() {
       text: text,
       date: date.toLocaleDateString(),
     };
-    console.log("App - prev note value");
-    console.log(notes);
     const newNotes = [...(notes || []), newNote];
-    // const newNotes = [...notes, newNote];
-    console.log(newNote);
     setNotes(newNotes);
   };
 
