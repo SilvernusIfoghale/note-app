@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
+
   const characterLimit = 200;
   const handleChange = (e) => {
     let value = parseInt(e.target.value.length);

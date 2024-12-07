@@ -6,7 +6,7 @@ import Header from "./components/Header";
 
 function App() {
   const [notes, setNotes] = useState(
-    JSON.parse(localStorage.getItem("saved-notes"))
+    JSON.parse(localStorage.getItem("saved-notes") || [])
   );
 
   const addNote = (text) => {
