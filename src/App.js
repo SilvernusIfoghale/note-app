@@ -5,20 +5,9 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 
 function App() {
-  // const [notes, setNotes] = useState(
-  //   JSON.parse(localStorage.getItem("saved-notes") || [])
-  // );
-
-  const [notes, setNotes] = useState(() => {
-    try {
-      const savedNotes = localStorage.getItem("saved-notes");
-      return savedNotes ? JSON.parse(savedNotes) : [];
-    } catch (error) {
-      console.error("Error parsing saved notes:", error);
-      return [];
-    }
-  });
-
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("saved-notes") || [])
+  );
   const addNote = (text) => {
     const date = new Date();
     const newNote = {
@@ -28,11 +17,9 @@ function App() {
     };
     console.log("App - prev note value");
     console.log(notes);
-    const newNotes = [...notes, newNote];
-    console.log("New Notes");
+    const newNotes = [...(notes || []), newNote];
+    // const newNotes = [...notes, newNote];
     console.log(newNote);
-    console.log("---- set notes value -");
-    console.log(newNotes);
     setNotes(newNotes);
   };
 
